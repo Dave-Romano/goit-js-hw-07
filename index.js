@@ -31,12 +31,11 @@ const images = [
 ];
 
 const galleryNode = document.querySelector('#gallery');
-images.forEach(item => {
-  galleryNode.insertAdjacentHTML(
-    'beforeend',
+const galleryItems = images.map(
+  item =>
     `<li class="gallery__item"><img class="gallery__image" src=${item.url} alt="${item.alt}" /></li>`,
-  );
-});
+);
+galleryNode.insertAdjacentHTML('beforeend', galleryItems.join(''));
 
 // --- task-04
 console.log('TASK-04');
